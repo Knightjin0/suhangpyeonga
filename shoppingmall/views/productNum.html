@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block mid %}
+<div class="card-body" style="font-family: 'Noto Sans KR', sans-serif;">
+  <form method="post" action="/myPage/{{user.id}}/cartProcess">
+    <table class="table table-striped">
+      <tr><td>제목</td><td>{{ product.name }}</td></tr>
+      <tr><td>작성일</td><td>{{ product.registrationDate }}</td></tr>
+      <tr><td>닉네임</td><td>{{ product.seller }}</td></tr>
+      <tr><td>내용</td><td><img src='/static/{{product.img}}'><br>{{ product.quantity }}</td></tr>
+    </table>
+    {% if user.id == product.seller %}
+    <button type="button" class="btn btn-danger"><a href='/products/{{product.idproducts}}/delete' style="text-decoration-line: none;">삭제<a></a></button>
+    
+    {% endif %}
+    <!-- {% if user %} -->
+    
+    <!-- {% endif %} -->
+  </form>
+</div>
+{% endblock %}

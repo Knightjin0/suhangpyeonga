@@ -1,0 +1,19 @@
+{% extends "index.html" %}
+{% block mid %} 
+
+<div style="font-family: 'Noto Sans KR', sans-serif;">
+<table class="table table-striped text-center" >
+  <th>제목</th>
+  <th>작성일</th>
+  <th>닉네임</th>
+  {% for product in products %}
+  <tr>
+    <td><a href="/products/{{product.idproducts}}">{{ product.name }}</a></td>
+    <td>{{ product.date }}</td>
+    <td>{{ product.seller }}</td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+
+{% endblock %}

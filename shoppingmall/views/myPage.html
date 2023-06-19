@@ -1,0 +1,17 @@
+{% extends "index.html" %}
+
+{% block mid %}
+<div class="card-body" style="font-family: 'Manrope', sans-serif;"  >
+  <form method="post" action="/myPage/{{user.id}}/edit">
+    <table class="table table-striped">
+      <tr><td>아이디</td><td>{{ user.id }}</td></tr>
+      <tr><td>이름</td><td>{{ user.name }}</td></tr>
+      <tr><td>비밀번호</td><td><input type="password" value='' name="userPW"></td></tr>
+      <tr><td>전화</td><td><input type="text" value='{{user.phone}}' name="userPhone"></td></tr>
+      <tr><td>이메일</td><td><input type="text" value='{{user.email}}' name="userEmail"></td></tr>
+      <tr><td>마지막 접속일</td><td>{{ user.lastLogin }}</td></tr>
+    </table>
+    <button type="submit" class="btn btn-outline-primary">수정</button>
+  </form>
+</div>
+{% endblock %}
